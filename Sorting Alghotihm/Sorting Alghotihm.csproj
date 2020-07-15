@@ -56,7 +56,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BubbleSort.cs" />
+    <Compile Include="ISortAlg.cs" />
+    <Compile Include="InsertSort.cs" />
     <Compile Include="QuickSort.cs" />
+    <Compile Include="SortAlg.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

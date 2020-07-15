@@ -32,9 +32,10 @@ namespace Sorting_Alghotihm
             taskToDo.Add(6);
             taskToDo.Add(5);
 
-            BubbleSort bubbleSort = new BubbleSort();
+            //BubbleSort bubbleSort = new BubbleSort();
+            InsertSort bubbleSort = new InsertSort();
             bubbleSort.LoadTask(taskToDo);
-            List<int> outputTask = new List<int>(bubbleSort.DoBubbleSort());
+            List<int> outputTask = new List<int>(bubbleSort.Sort());
 
             string inputString = string.Join(",", taskToDo.ToArray());
             OutputText.Text = inputString;

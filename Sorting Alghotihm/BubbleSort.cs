@@ -7,11 +7,9 @@ using System.Windows.Media.TextFormatting;
 
 namespace Sorting_Alghotihm
 {
-    class BubbleSort
+    class BubbleSort : SortAlg, ISortAlg
     {
-        private List<int> task;
-
-        public List<int> DoBubbleSort()
+        public List<int> Sort()
         {
             int n = task.Count();
             int tmpValue;
@@ -28,12 +26,8 @@ namespace Sorting_Alghotihm
                 }
                 n = n - 1;
             } while (n > 1);
-            return task;
-        }
 
-        public void LoadTask(List<int> taskToLoad)
-        {
-            task = taskToLoad;
+            return task;
         }
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Sorting_Alghotihm
 {
-    class QuickSort : SortAlg
+    interface ISortAlg
     {
+        List<int> Sort();
     }
 }
