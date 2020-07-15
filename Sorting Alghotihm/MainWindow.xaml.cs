@@ -23,6 +23,24 @@ namespace Sorting_Alghotihm
         public MainWindow()
         {
             InitializeComponent();
+
+            List<int> taskToDo = new List<int>();
+            taskToDo.Add(3);
+            taskToDo.Add(2);
+            taskToDo.Add(4);
+            taskToDo.Add(1);
+            taskToDo.Add(6);
+            taskToDo.Add(5);
+
+            BubbleSort bubbleSort = new BubbleSort();
+            bubbleSort.LoadTask(taskToDo);
+            List<int> outputTask = new List<int>(bubbleSort.DoBubbleSort());
+
+            string inputString = string.Join(",", taskToDo.ToArray());
+            OutputText.Text = inputString;
+            string outputString = string.Join(",", outputTask.ToArray());
+            OutputText.Text = outputString;
+
         }
     }
 }
