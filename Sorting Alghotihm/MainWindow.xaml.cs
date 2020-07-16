@@ -26,19 +26,24 @@ namespace Sorting_Alghotihm
 
             List<int> taskToDo = new List<int>();
             taskToDo.Add(3);
-            taskToDo.Add(2);
+            taskToDo.Add(7);
             taskToDo.Add(4);
             taskToDo.Add(1);
             taskToDo.Add(6);
             taskToDo.Add(5);
+            taskToDo.Add(2);
 
             //BubbleSort bubbleSort = new BubbleSort();
-            InsertSort bubbleSort = new InsertSort();
-            bubbleSort.LoadTask(taskToDo);
-            List<int> outputTask = new List<int>(bubbleSort.Sort());
+            //InsertSort bubbleSort = new InsertSort();
+            MergeSort mergeSort = new MergeSort();
+
+            //bubbleSort.LoadTask(taskToDo);
+            mergeSort.LoadTask(taskToDo);
+            //List<int> outputTask = new List<int>(bubbleSort.Sort());
+            List<int> outputTask = new List<int>(mergeSort.Sort());
 
             string inputString = string.Join(",", taskToDo.ToArray());
-            OutputText.Text = inputString;
+            inputText.Text = inputString;
             string outputString = string.Join(",", outputTask.ToArray());
             OutputText.Text = outputString;
 
