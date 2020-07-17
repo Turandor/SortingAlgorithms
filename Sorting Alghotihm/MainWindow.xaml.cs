@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using Microsoft.Win32;
+
 
 namespace Sorting_Alghotihm
 {
@@ -24,29 +27,49 @@ namespace Sorting_Alghotihm
         {
             InitializeComponent();
 
-            List<int> taskToDo = new List<int>();
-            taskToDo.Add(3);
-            taskToDo.Add(7);
-            taskToDo.Add(4);
-            taskToDo.Add(1);
-            taskToDo.Add(6);
-            taskToDo.Add(5);
-            taskToDo.Add(2);
+        }
 
-            //BubbleSort bubbleSort = new BubbleSort();
-            //InsertSort bubbleSort = new InsertSort();
-            MergeSort mergeSort = new MergeSort();
+        private void chooseFileButton_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            //bubbleSort.LoadTask(taskToDo);
-            mergeSort.LoadTask(taskToDo);
-            //List<int> outputTask = new List<int>(bubbleSort.Sort());
-            List<int> outputTask = new List<int>(mergeSort.Sort());
+            openFileDialog.InitialDirectory = "c:\\";
+            openFileDialog.Filter = "txt files (*.txt)|*.txt";
+            openFileDialog.FilterIndex = 2;
+            openFileDialog.RestoreDirectory = true;
 
-            string inputString = string.Join(",", taskToDo.ToArray());
-            inputText.Text = inputString;
+            if (openFileDialog.ShowDialog() == true)
+            {
+                txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+                filePath.Text = openFileDialog.FileName;
+                filePath.Visibility = Visibility.Visible;
+                var logFile = File.ReadAllLines(openFileDialog.FileName);
+                var task = logFile.Select(int.Parse).ToList();
+            }
+
+        }
+
+        private void sortButton_Click(object sender, RoutedEventArgs e)
+        {
+            ISortAlg sortAlg;
+            if ((bool)mergeRB.IsChecked)
+                sortAlg = new MergeSort();
+            else if ((bool)insertRB.IsChecked)
+                sortAlg = new InsertSort();
+            //else ((bool)bubbleRB.IsChecked)
+            else
+                sortAlg = new BubbleSort();
+
+
+            sortAlg.LoadTask(filePath);
+            List<int> outputTask = new List<int>(sortAlg.Sort());
+
             string outputString = string.Join(",", outputTask.ToArray());
             OutputText.Text = outputString;
-
+        }
+        private void resetButton_Click(object sender, RoutedEventArgs e)
+        {
+            OutputText.Text = null;
         }
     }
 }
