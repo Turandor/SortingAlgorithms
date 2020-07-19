@@ -11,17 +11,19 @@
             <ColumnDefinition Width="25*"/>
             <ColumnDefinition Width="371*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="OutputText" HorizontalAlignment="Left" Margin="200,235,0,0" TextWrapping="Wrap" Text="OutputText" VerticalAlignment="Top" Height="174" Width="195" TextAlignment="Center" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Choose a .txt file to sort:" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="2"/>
         <Button x:Name="chooseFileButton" Content="Choose file" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="chooseFileButton_Click"/>
         <RadioButton x:Name="bubbleRB" Content="Bubble Sort" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" GroupName="sortChoose"/>
         <RadioButton x:Name="insertRB" Content="Insert Sort" HorizontalAlignment="Left" Margin="10,137,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" GroupName="sortChoose"/>
         <RadioButton x:Name="mergeRB" Content="Merge Sort" HorizontalAlignment="Left" Margin="10,157,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" GroupName="sortChoose"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,93,0,0" TextWrapping="Wrap" Text="Choose sorting alghorithm:" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtEditor" HorizontalAlignment="Left" Height="175" Margin="10,234,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="210" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtEditor" HorizontalAlignment="Left" Height="175" Margin="10,234,0,0" TextWrapping="Wrap" Text="Input" VerticalAlignment="Top" Width="210" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="filePath" HorizontalAlignment="Left" Margin="10,61,0,0" TextWrapping="Wrap" Text="filePath" VerticalAlignment="Top" Grid.ColumnSpan="2" FontStyle="Italic" Visibility="Hidden"/>
-        <Button x:Name="sortButton" Content="Sort" HorizontalAlignment="Left" Margin="16,190,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="sortButton_Click"/>
-        <Button x:Name="resetButton" Content="Reset" HorizontalAlignment="Left" Margin="260,190,0,0" VerticalAlignment="Top" Width="75" Click="resetButton_Click" Grid.Column="1"/>
+        <Button x:Name="sortButton" Content="Sort" HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="sortButton_Click"/>
+        <Button x:Name="resetButton" Content="Reset" HorizontalAlignment="Left" Margin="262,209,0,0" VerticalAlignment="Top" Width="75" Click="resetButton_Click" Grid.Column="1"/>
+        <TextBlock x:Name="sortTimeText" HorizontalAlignment="Left" Margin="200,379,0,0" TextWrapping="Wrap" Text="Sort time: -" VerticalAlignment="Top" Height="30" Width="195" TextAlignment="Center" Grid.Column="1"/>
+        <TextBox x:Name="outputText" Grid.Column="1" HorizontalAlignment="Left" Height="140" Margin="215,234,0,0" TextWrapping="Wrap" Text="Output" VerticalAlignment="Top" Width="180"/>
+        <RadioButton x:Name="quickRB" Content="Quick Sort" HorizontalAlignment="Left" Margin="10,177,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" GroupName="sortChoose"/>
 
     </Grid>
 </Window>

@@ -9,7 +9,7 @@ namespace Sorting_Alghotihm
 {
     class InsertSort : SortAlg, ISortAlg
     {
-        public List<int> Sort()
+        public new List<int> Sort()
         {
             int n = task.Count();
             int tmpValue;
@@ -30,6 +30,10 @@ namespace Sorting_Alghotihm
             }
 
             return task;
+        }
+        public void LoadTask (List<int> taskList)
+        {
+            task = taskList;
         }
     }
 }

@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using System.Diagnostics;
+using System.Threading;
 
 
 namespace Sorting_Alghotihm
@@ -51,25 +53,33 @@ namespace Sorting_Alghotihm
 
         private void sortButton_Click(object sender, RoutedEventArgs e)
         {
+            Stopwatch stopwatch = new Stopwatch();
             ISortAlg sortAlg;
+
+
             if ((bool)mergeRB.IsChecked)
                 sortAlg = new MergeSort();
             else if ((bool)insertRB.IsChecked)
                 sortAlg = new InsertSort();
-            //else ((bool)bubbleRB.IsChecked)
+            else if ((bool)quickRB.IsChecked)
+                sortAlg = new QuickSort();
             else
                 sortAlg = new BubbleSort();
 
-
             sortAlg.LoadTask(filePath);
-            List<int> outputTask = new List<int>(sortAlg.Sort());
 
-            string outputString = string.Join(",", outputTask.ToArray());
-            OutputText.Text = outputString;
+            stopwatch.Start();
+            List<int> outputTask = new List<int>(sortAlg.Sort());
+            stopwatch.Stop();
+
+            sortTimeText.Text = "Sort time: " + stopwatch.ElapsedMilliseconds + "ms";
+            string outputString = string.Join("\n", outputTask.ToArray());
+            outputText.Text = outputString;
         }
         private void resetButton_Click(object sender, RoutedEventArgs e)
         {
-            OutputText.Text = null;
+            outputText.Text = null;
+            sortTimeText.Text = "Sort time: -";
         }
     }
 }

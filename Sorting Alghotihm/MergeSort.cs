@@ -9,7 +9,7 @@ namespace Sorting_Alghotihm
 {
     class MergeSort : SortAlg, ISortAlg
     {
-        public List<int> Sort()
+        public new List<int> Sort()
         {
             List<int> A = new List<int>(task);
             List<int> B = new List<int>(task);

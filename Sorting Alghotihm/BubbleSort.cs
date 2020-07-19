@@ -9,7 +9,7 @@ namespace Sorting_Alghotihm
 {
     class BubbleSort : SortAlg, ISortAlg
     {
-        public List<int> Sort()
+        public new List<int> Sort()
         {
             int n = task.Count();
             int tmpValue;
