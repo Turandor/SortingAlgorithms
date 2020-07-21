@@ -11,6 +11,7 @@ namespace Sorting_Alghotihm
     class SortAlg : ISortAlg
     {
         protected List<int> task;
+        public List<int> Task => task;
 
         public void LoadTask(TextBlock filePath)
         {

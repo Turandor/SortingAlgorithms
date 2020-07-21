@@ -15,41 +15,21 @@ namespace Sorting_Alghotihm
             return task;
         }
 
-        void DoQuickSort (int iBegin, int iEnd)
+        void DoQuickSort(int iBegin, int iEnd)
         {
             int iSplit;
-            if (iBegin<iEnd-1)
+            if (iBegin < iEnd - 1)
             {
                 iSplit = SplitTask(iBegin, iEnd);
-                //if (iSplit-1-iBegin > 10)
-                    DoQuickSort(iBegin, iSplit - 1);
-                /*
-                else
-                {
-                    InsertSort insertSort = new InsertSort();
-                    insertSort.LoadTask(task.GetRange(iBegin, (iSplit-1-iBegin)));
-                    task.InsertRange(iBegin, insertSort.Sort());
-                }
-
-                iSplit = SplitTask(iBegin, iEnd);
-                if (iEnd - (iSplit + 1) > 10)
-                */
-                    DoQuickSort(iSplit + 1, iEnd);
-                /*
-                else
-                {
-                    InsertSort insertSort = new InsertSort();
-                    insertSort.LoadTask(task.GetRange(iBegin, (iEnd - (iSplit + 1))));
-                    task.InsertRange(iBegin, insertSort.Sort());
-                }
-                */
+                DoQuickSort(iBegin, iSplit - 1);
+                DoQuickSort(iSplit + 1, iEnd);
             }
         }
         int SplitTask(int iBegin, int iEnd)
         {
-            int iSplit = ChooseSplitPoint(iBegin, iEnd);
-            int splitValue = task[iSplit];
-            Swap(iSplit, iEnd);
+            int pivot = ChoosePivot(iBegin, iEnd);
+            int splitValue = task[pivot];
+            Swap(pivot, iEnd);
 
             int iCurrent = iBegin;
 
@@ -65,10 +45,9 @@ namespace Sorting_Alghotihm
             return iCurrent;
         }
 
-        int ChooseSplitPoint (int iBegin, int iEnd)
+        int ChoosePivot (int iBegin, int iEnd)
         {
             return iBegin + (iEnd - iBegin) / 2;
-            //return iEnd;
         }
 
         void Swap (int i1, int i2)

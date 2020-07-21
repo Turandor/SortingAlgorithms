@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BubbleSort.cs" />
+    <Compile Include="HeapSort.cs" />
     <Compile Include="ISortAlg.cs" />
     <Compile Include="InsertSort.cs" />
     <Compile Include="MergeSort.cs" />
