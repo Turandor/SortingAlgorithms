@@ -7,7 +7,7 @@ using System.Windows.Media.TextFormatting;
 
 namespace Sorting_Alghotihm
 {
-    class QuickSort : SortAlg, ISortAlg
+    public class QuickSort : SortAlg, ISortAlg
     {
         public new List<int> Sort()
         {
@@ -18,7 +18,7 @@ namespace Sorting_Alghotihm
         void DoQuickSort(int iBegin, int iEnd)
         {
             int iSplit;
-            if (iBegin < iEnd - 1)
+            if (iBegin < iEnd)
             {
                 iSplit = SplitTask(iBegin, iEnd);
                 DoQuickSort(iBegin, iSplit - 1);

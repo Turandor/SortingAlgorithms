@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sorting_Alghotihm
 {
-    class MergeSort : SortAlg, ISortAlg
+    public class MergeSort : SortAlg, ISortAlg
     {
         public new List<int> Sort()
         {

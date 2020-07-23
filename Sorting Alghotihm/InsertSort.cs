@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace Sorting_Alghotihm
 {
-    class InsertSort : SortAlg, ISortAlg
+    public class InsertSort : SortAlg, ISortAlg
     {
         public new List<int> Sort()
         {
