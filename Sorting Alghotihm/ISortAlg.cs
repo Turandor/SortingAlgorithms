@@ -10,6 +10,6 @@ namespace Sorting_Alghotihm
     interface ISortAlg
     {
         List<int> Sort();
-        void LoadTask(TextBlock textBlock);
+        void LoadTaskFromFile(TextBlock textBlock);
     }
 }

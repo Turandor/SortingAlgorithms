@@ -7,7 +7,7 @@ using System.Windows.Media.TextFormatting;
 
 namespace Sorting_Alghotihm
 {
-    class BubbleSort : SortAlg, ISortAlg
+    public class BubbleSort : SortAlg, ISortAlg
     {
         public new List<int> Sort()
         {

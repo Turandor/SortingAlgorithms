@@ -31,9 +31,6 @@ namespace Sorting_Alghotihm
 
             return task;
         }
-        public void LoadTask (List<int> taskList)
-        {
-            task = taskList;
-        }
+
     }
 }

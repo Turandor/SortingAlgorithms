@@ -66,7 +66,7 @@ namespace Sorting_Alghotihm
             else
                 sortAlg = new BubbleSort();
 
-            sortAlg.LoadTask(filePath);
+            sortAlg.LoadTaskFromFile(filePath);
 
             stopwatch.Start();
             List<int> outputTask = new List<int>(sortAlg.Sort());

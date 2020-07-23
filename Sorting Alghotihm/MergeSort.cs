@@ -49,10 +49,6 @@ namespace Sorting_Alghotihm
                 }
             }
         }
-        public static bool IsOdd(int value)
-        {
-            return value % 2 != 0;
-        }
     }
 
 }
